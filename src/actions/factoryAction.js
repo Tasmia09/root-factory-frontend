@@ -6,11 +6,12 @@ export const CREATE_FACTORY = "CREATE_FACTORY";
 export const UPDATE_FACTORY = "UPDATE_FACTORY";
 export const DELETE_FACTORY = "DELETE_FACTORY";
 
-const API_URL = "http://localhost:5069/"
+const API_URL = "http://localhost:5069"
 
 export function getFactories() {
     console.log('test getting factories...')
-    const url = `${API_URL}/api/root/getAll`;
+    const url = `${API_URL}/api/factory/getAll`;
+    console.log("URL is", url);
     return async dispatch => {
       try {
         const factories = await axios.get(url);
@@ -23,7 +24,8 @@ export function getFactories() {
 
 export function createFactory(body) {
   console.log('body is: ', body)
-  const url = `${API_URL}/api/root/createRoot`;
+  const url = `${API_URL}/api/factory/createFactory`;
+  console.log("URL is ", url);
   return async dispatch => {
     try {
       const newFactory = await axios.post(url, body);
@@ -37,7 +39,7 @@ export function createFactory(body) {
 
 export function getFactoryById(id) {
   console.log('getting factory by id: ', id)
-  const url = `${API_URL}/api/root/getRoot?id=${id}`;
+  const url = `${API_URL}/api/factory/getFactory?id=${id}`;
   return async dispatch => {
     try {
       const factory = await axios.get(url);
@@ -50,7 +52,7 @@ export function getFactoryById(id) {
 
 export function updateFactory(id, body) {
   console.log('in update, id is: ', id, 'body is: ', body)
-  const url = `${API_URL}/api/root/updateRoot/${id}`;
+  const url = `${API_URL}/api/factory/updateFactory/${id}`;
   return async dispatch => {
     try {
       const newFactory = await axios.put(url, body);
@@ -63,7 +65,7 @@ export function updateFactory(id, body) {
 }
 
 export function deleteFactory(id) {
-  const url = `${API_URL}/api/root/deleteRoot/${id}`;
+  const url = `${API_URL}/api/factory/deleteFactory/${id}`;
   return async dispatch => {
     try{
       const remainingFactories = await axios.delete(url);

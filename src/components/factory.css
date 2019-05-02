@@ -1,0 +1,11 @@
+.create-modal-btn {
+    background-color: #2caec6;
+    color: #fff;
+    height: 80px;
+    width:180px;
+}
+
+.create-modal-btn:hover {
+    background-color: #7cb1ba;
+    color: #fff;
+}
