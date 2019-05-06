@@ -183,7 +183,7 @@ handleDeleteFactory = () => {
   onSubmitUpdate = () => {
     this.props.form.validateFields(['updated_name', 'updated_num_children', 'updated_upper_limit', 'updated_lower_limit'], async(err, values) => {
         if(!err) {
-            if(values.num_children > 15 || Number(values.updated_upper_limit) < Number(values.updated_lower_limit)) {
+            if(values.updated_num_children > 15 || Number(values.updated_upper_limit) < Number(values.updated_lower_limit)) {
                 notification.error({
                     message: "Invalid Input!"
                 })
